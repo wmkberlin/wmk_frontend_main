@@ -1,0 +1,155 @@
+/* ====== DESKTOP / DEFAULT STYLES ====== */
+.newsletter-section {
+  background-color: #000; /* Black background */
+  color: #fff;           /* White text */
+  text-align: center;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newsletter-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  padding: 0 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  max-width: 500px; /* Adjust width as needed */
+  border-radius: 5px;
+  overflow: hidden; /* Ensures a smooth curved effect (DESKTOP ONLY) */
+}
+
+/* Input (Desktop) */
+.newsletter-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px 0 0 5px;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.newsletter-input::placeholder {
+  color: #ccc; /* Light gray placeholder text */
+}
+
+.newsletter-input:focus {
+  background-color: #000; /* Black background on focus */
+  border: black;
+}
+
+/* Button (Desktop) */
+.newsletter-button {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 0 25px 25px 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* Prevents text wrapping */
+}
+
+.newsletter-button:hover {
+  background-color: #ccc; /* Light gray button on hover */
+}
+
+/* Description */
+.newsletter-description {
+  font-size: 14px;
+  color: #ccc; /* Light gray description text */
+  margin-top: 10px;
+}
+
+/* ====== MOBILE STYLES (ONLY FOR ≤768px) ====== */
+@media (max-width: 768px) {
+  /* Stack the input & button vertically */
+  .newsletter-form {
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px; /* Tighter width for mobile look */
+    border: none !important;       /* Remove extra border */
+    box-shadow: none !important;   /* Remove any box-shadow if present */
+    overflow: visible !important;  /* Allow pill shapes to show fully */
+  }
+
+  /* Make input & button full-width pill shapes */
+  .newsletter-input-wrapper,
+  .newsletter-button-wrapper {
+    width: 100%;
+  }
+
+  /* Input: elliptical black pill with white border & centered text */
+  .newsletter-input {
+    box-sizing: border-box; /* Include border in total width */
+    width: 100%;
+    padding: 15px;
+    border: 2px solid white;
+    border-radius: 999px; /* Fully rounded corners */
+    background-color: #000; /* Black fill */
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .newsletter-input::placeholder {
+    color: #fff; /* White placeholder text */
+    font-weight: bold;
+  }
+
+  /* Keep the white border on focus in mobile */
+  .newsletter-input:focus {
+    border: 2px solid white !important;
+    background-color: #000;
+  }
+
+  /* Button: elliptical white pill with black text */
+  .newsletter-button {
+    box-sizing: border-box; /* Include border in total width */
+    width: 100%;
+    padding: 15px;
+    border-radius: 999px; /* Fully rounded corners */
+    background-color: #fff;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    justify-content: center; /* Center text horizontally */
+  }
+
+  /* Optional: reduce padding in mobile */
+  .newsletter-section {
+    padding: 2rem 1rem;
+  }
+}
+
+
+.newsletter-error {
+  color: #ff0000;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.success-message {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+}
+
+.newsletter-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

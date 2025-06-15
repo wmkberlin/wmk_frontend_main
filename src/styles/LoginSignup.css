@@ -1,0 +1,123 @@
+/* Main Container */
+.containerLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 4rem 1rem; */
+  height: 500px;
+  /* Set a fixed height */
+  width: 900px;
+  /* Set a fixed width */
+  background-color: #fff;
+  /* Ensure consistent background color */
+  border-radius: 10px;
+  /* Add rounded corners */
+  overflow: hidden;
+  /* Remove any content overflow */
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); Add subtle shadow */
+}
+
+@media (min-width:200px) and (max-width: 639px) {
+  .left-panel {
+    display: none !important;
+  }
+}
+
+/* Left Panel */
+.left-panel {
+  background-color: #f2f2f2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.left-panel h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.left-panel p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-align: center;
+  /* Center align the text */
+}
+
+.left-panel .illustration {
+  width: 200px;
+  margin-top: 20px;
+}
+
+/* Right Panel */
+.right-panel {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.form {
+  width: 100%;
+  max-width: 350px;
+  /* Adjust the form width */
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #e5533d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e68900;
+}
+
+.terms {
+  font-size: 0.9rem;
+  margin-top: 15px;
+  color: #666;
+}
+
+.link {
+  color: #2874f0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.toggle {
+  margin-top: 20px;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+.outerContainerLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}

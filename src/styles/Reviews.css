@@ -1,0 +1,143 @@
+/* Container for the entire reviews section */
+.reviews-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Audiowide", serif; /* Consistent with navbar */
+  box-sizing: border-box;
+  color: #333;
+  text-align: center;
+}
+
+/* Large heading at the top */
+.reviews-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #070707; /* Match brand color */
+}
+
+/* Shows rating info (4.8 / 5.0) with a star icon */
+.reviews-rating {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #666;
+}
+
+/* Scrollable container holding the review cards */
+.reviews-cards {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 15px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #000 transparent; /* Black scrollbar thumb, transparent track */
+}
+
+/* Scrollbar styling for Webkit (Chrome, Safari) */
+.reviews-cards::-webkit-scrollbar {
+  height: 4px; /* Very small scrollbar */
+}
+.reviews-cards::-webkit-scrollbar-track {
+  background: transparent; /* Invisible track */
+}
+.reviews-cards::-webkit-scrollbar-thumb {
+  background-color: #000; /* Black scrollbar */
+  border-radius: 10px; /* Smooth rounded edges */
+}
+
+/* Individual review card */
+.review-card {
+  background: #fff;
+  min-width: 280px;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex-shrink: 0;
+  text-align: left;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-origin: 50% 50%;
+}
+
+/* The main text within the card */
+.review-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #333;
+  white-space: pre-line;
+}
+
+/* Footer containing name & star rating */
+.review-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Reviewer's name */
+.review-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Container for star icons */
+.review-stars {
+  display: flex;
+  gap: 2px;
+}
+
+/* Star icon styling */
+.star-icon {
+  color: #FFD700; /* Gold color */
+  font-size: 1rem;
+}
+
+/* Tilt effect to give a dynamic look */
+.reviews-cards .review-card:nth-child(1) { transform: rotate(-3deg); }
+.reviews-cards .review-card:nth-child(2) { transform: rotate(3deg); }
+.reviews-cards .review-card:nth-child(3) { transform: rotate(-2deg); }
+.reviews-cards .review-card:nth-child(4) { transform: rotate(2deg); }
+.reviews-cards .review-card:nth-child(5) { transform: rotate(-3deg); }
+
+/* Hover effect */
+.review-card:hover {
+  transform: rotate(0deg) scale(1.03);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 20px 10px;
+  }
+
+  .reviews-title {
+    font-size: 1.5rem;
+  }
+
+  .reviews-rating {
+    font-size: 1rem;
+  }
+
+  .reviews-cards {
+    gap: 10px;
+  }
+
+  .review-card {
+    min-width: 250px;
+    padding: 15px;
+  }
+
+  .review-text {
+    font-size: 0.85rem;
+  }
+}

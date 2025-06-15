@@ -1,0 +1,188 @@
+/* Container for the filler items */
+.fillers-container {
+    display: flex; /* Aligns children horizontally */
+    justify-content: space-between; /* Adds space between the items */
+    align-items: center; /* Centers items vertically */
+    gap: 0px; /* Adds space between the items */
+    margin-top: 0rem;
+}
+
+@media (min-width:200px) and (max-width:768px) {
+  .fillers-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-top: 2rem;
+  }
+
+  .filler-item {
+    flex: none !important;
+    width: 100%;
+  }
+
+  .filler-item-0{
+    width: 100%;
+  }
+
+  .ukrainImage{
+    width: 100% !important;
+  }
+
+  .ukrainText{
+    width: 100% !important;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .span1-filler {
+    font-size: 1rem !important;
+  }
+
+  .span2-filler{
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Common styles for both filler items */
+.filler-item-0 {
+    flex: 1;
+    height: 42rem; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background-size: cover; 
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dark overlay for the background image (applies to both items by default) */
+.filler-item-0::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% darkness */
+    z-index: 1;
+}
+
+/* Content inside the filler item */
+.filler-item-0 span,
+.filler-item-0 button {
+    position: relative;
+    z-index: 2;
+}
+
+/* Specific styles for the first filler item */
+.filler-item-01 {
+    background-image: url('/Wollen_Möbel_Kaufen.webp');
+}
+
+/* Specific styles for the second filler item */
+.filler-item-02 {
+    background-image: url('/thinkGreen.webp');
+}
+
+/* 
+  Override or remove the overlay specifically for filler-item-02 
+  to keep its background image fully bright 
+*/
+.filler-item-02::before {
+    background-color: rgba(0, 0, 0, 0) !important; 
+    /* or rgba(0, 0, 0, 0.2) for a lighter overlay instead of none */
+}
+
+/* 'MORE ON THIS' Button */
+.more-button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.875rem 2rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 50px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Arrow Styling */
+.more-button::after {
+  content: "→";
+  font-size: 1.2rem;
+  font-weight: 900;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  position: absolute;
+  right: 15px;
+}
+
+/* Hover Effect */
+.more-button:hover {
+  background-color: #222;
+  transform: scale(1.1);
+}
+
+/* Arrow Appears on Hover */
+.more-button:hover::after {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* Text styling */
+.span1-filler {
+  font-family: "Audiowide", serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.span2-filler {
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 900; 
+  /* Larger text-shadow for a thicker look */
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+/* Transparent button variant */
+.btnfillers {
+  background-color: transparent !important;
+  transition: all 0.3s ease;
+  border: 2px solid white !important;
+  margin-top: 16px;
+}
+
+
+.btn-ukrine{
+  background-color: #000 !important;
+}
+
+.ukrainImage{
+  width: 50%;
+}
+
+.ukrainImage img{
+  width: 100%;
+}
+
+.ukrainText{
+  width: 50%;
+}

@@ -1,0 +1,143 @@
+.order-review-container {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* display: flex; */
+}
+
+.order-heading {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.order-section {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.contact-info p, .delivery-details p {
+  font-size: 16px;
+  margin: 5px 0;
+  color: #444;
+}
+
+.order-summary {
+  padding: 10px;
+}
+
+.cart-item-box {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.cart-item-details p {
+  margin: 5px 0;
+  color: #333;
+}
+
+.payment-options {
+  margin: 15px 0;
+}
+
+/* .payment-options label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+} */
+
+.payment-options label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.cart-total-box {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+}
+
+.confirm-payment-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #28a745;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.confirm-payment-btn:hover {
+  background: #218838;
+}
+
+.order-review-sub-container{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+
+@media (max-width: 768px) {
+  .order-review-sub-container{
+    flex-direction: column-reverse;
+  }
+}
+
+.payment-method-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.payment-icon {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* For bank logos that might be too wide */
+.payment-icon[alt="Bank Deposit"] {
+  height: 16px;
+}
+
+.klarnaIcon{
+  height: 57px;
+
+}

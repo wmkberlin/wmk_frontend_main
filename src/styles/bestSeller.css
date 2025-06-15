@@ -1,0 +1,211 @@
+/* Container for the sales section */
+.bestproduct-container {
+  padding: 0rem;
+  width: 100%;
+  max-width: 100%; /* Ensures it doesn’t get restricted by any parent elements */
+}
+
+/* Header styles */
+.bestproduct-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.bestproduct-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.bestproduct-subtitle {
+  font-size: 1.2rem;
+  font-family: sans-serif;
+}
+
+.sales-text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff; /* Adjust background as needed */
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Grid container with full width */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0rem;
+  width: 100%;
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Force 2 columns, uniform row height */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+  }
+
+  /* Let the card fill the grid cell */
+  .product-card,
+  .sales-text-box {
+    height: 100%;
+  }
+
+  /* The KEY fix: override 24rem with a smaller or auto height */
+  .product-image-container {
+    height: auto !important; 
+    /* or pick a smaller fixed height like: height: 15rem !important; */
+  }
+}
+
+
+@media (max-width: 480px) {
+  /* Override any previous single-column rule by forcing 2 columns again */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+  }
+
+  .product-card,
+  .sales-text-box {
+    height: 100%;
+  }
+}
+
+/* Product Card Styles */
+.product-card {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Image container */
+.product-image-container {
+  background-color: #ebebeb;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  height: 24rem; /* Increased image height */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.product-image-container:hover {
+  transform: scale(1.05);
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintains aspect ratio across devices */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+  transform: scale(1.1);
+}
+
+/* Product info section */
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 100%;
+}
+
+/* Product name */
+.product-name {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Product price and discount */
+.product-price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.product-discount {
+  background-color: #ff6347;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+  display: inline-block;
+}
+
+/* Product rating */
+.product-rating {
+  font-size: 0.95rem;
+  color: #ffb400;
+  margin-top: 0.5rem;
+}
+
+/* Buy Now button */
+.buy-now-btn {
+  background-color: #ff6347;
+  color: white;
+  width: 100%;
+  height: 3rem;
+  text-align: center;
+  line-height: 3rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buy-now-btn:hover {
+  background-color: #e5533d;
+  transform: scale(1.05);
+}
+
+.buy-now-btn:active {
+  background-color: #dd1d1d;
+  transform: scale(1);
+}
+
+/* Text Centering */
+.text-center p {
+  font-size: 1.2rem;
+  color: #6b7280;
+  margin-top: 0;
+}
+
+/* Parent container */
+.parentDiv-BestProduct {
+  padding: 2rem 4rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+}

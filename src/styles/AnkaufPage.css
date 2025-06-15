@@ -1,0 +1,130 @@
+/* Base styles */
+
+
+  
+  /* Container */
+  .furniture-form-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* Form container background is white */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  
+  /* Form elements */
+  .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .form-group {
+    flex: 1;
+    margin-bottom: 15px;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fff; /* Inputs are now white */
+    transition: border-color 0.3s;
+  }
+  
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #999;
+    background-color: #fff;
+  }
+  
+  .hint-text {
+    font-size: 0.875rem;
+    color: #777;
+    margin-top: 5px;
+  }
+  
+  /* File upload */
+  .image-upload-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .file-input {
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 100%;
+    font-size: 0.875rem;
+  }
+  
+  .upload-hint {
+    font-size: 0.875rem;
+    color: #777;
+    margin-top: 5px;
+  }
+  
+  /* Submit button */
+  .submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+  }
+  
+  /* Powered by section */
+  .powered-by {
+    text-align: right;
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 20px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .image-upload-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    h1,
+    h2 {
+      font-size: 1.5rem; /* Adjusts heading size for smaller screens */
+    }
+  
+    p,
+    label,
+    input,
+    select,
+    .submit-button {
+      font-size: 0.9rem; /* Adjusts text size for smaller screens */
+    }
+  }
+  

@@ -1,0 +1,381 @@
+/* Sliding Bar */
+.sliding-bar {
+  background-color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+}
+
+.sliding-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: slide 20s linear infinite;
+}
+
+@keyframes slide {
+  from {
+      transform: translateX(100%);
+  }
+  to {
+      transform: translateX(-100%);
+  }
+}
+
+/* Important Notice */
+.important-notice {
+  background-color: #ea2425;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* CONTENT - Split layout with fixed height */
+.content {
+  display: flex;
+  align-items: stretch;
+  height: 100vh; /* Full viewport height */
+  gap: 0;
+  margin: 0 auto;
+  max-width: 100%;
+  position: relative; /* Needed for sticky positioning */
+}
+
+/* IMAGE CONTAINER */
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: sticky; /* Make the image sticky */
+  top: 0; /* Stick to the top of the viewport */
+  height: 100vh; /* Full viewport height */
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TEXT CONTAINER */
+.text-container1 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-y: auto; /* Scroll if text is longer than the container */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+  /* height: 100vh; Full viewport height */
+}
+
+.text-container1::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome/Safari/Opera */
+}
+
+/* HEADINGS & PARAGRAPHS INSIDE TEXT CONTAINER */
+.text-container1 h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.text-container1 p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+/* GALLERY SECTION */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.text-container1 ul {
+  list-style-type: disc; /* Adds bullet points */
+  padding-left: 20px; /* Adds some padding for better alignment */
+}
+
+.text-container1 ul li {
+  margin-bottom: 10px; /* Adds space between list items */
+  font-size: 1rem; /* Adjust font size as needed */
+  line-height: 1.5; /* Improves readability */
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2940 / 2370;
+  object-fit: cover;
+}
+
+/* FULL-WIDTH IMAGE SECTION */
+.full-width-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 0px;
+}
+
+.full-width-image img {
+  width: 100%;
+  height: 338px;
+}
+
+.full-width-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-family: inherit;
+}
+
+.full-width-text h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.full-width-text p {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #fffdfd;
+}
+
+/* INFO SECTION */
+.info-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+}
+
+/* INFO CARDS */
+.info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.info-icon {
+  width: 50px;  
+  height: 50px;
+  font-weight: bold; 
+  margin-bottom: 1.5rem;
+}
+
+.info-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700; 
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-card p {
+  font-size: 1rem;
+  font-weight: 600; 
+  line-height: 1.6;
+  color: #333;
+  max-width: 280px;
+  flex-grow: 1; 
+}
+
+/* 'MORE ON THIS' Button */
+.more-button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.875rem 2rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 50px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.more-button::after {
+  content: "→";
+  font-size: 1.2rem; 
+  font-weight: 900; 
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  position: absolute;
+  right: 15px;
+}
+
+.more-button:hover {
+  background-color: #222;
+  transform: scale(1.1);
+}
+
+.more-button:hover::after {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .info-section {
+    gap: 3rem;
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Revert to vertical layout on smaller screens */
+  .content {
+    flex-direction: column;
+    height: auto; /* Let content naturally expand */
+  }
+
+  .text-container1 {
+    overflow-y: visible;
+    height: auto;
+  }
+
+  .full-width-text p{
+    text-wrap: inherit;
+  }
+
+
+  .info-section {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .full-width-text {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .info-card p {
+    max-width: 100%;
+  }
+
+  .image-container{
+    position: relative;
+  }
+
+  .gallery{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* NEWSLETTER SECTION */
+.newsletter-container {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 80px 20px; 
+  font-family: 'Arial', sans-serif;
+}
+
+.newsletter-container h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px; 
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 2px solid white;
+  border-radius: 50px;
+  overflow: hidden;
+  height: 100px;
+}
+
+.email-input {
+  flex: 1;
+  padding: 18px 20px; 
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background: black;
+  color: white;
+}
+
+.submit-button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 18px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0;
+}
+
+.submit-button:hover {
+  background-color: #ddd;
+}
+
+.newsletter-text {
+  font-size: 1.1rem;
+  margin-top: 20px; 
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .newsletter-container {
+    padding: 100px 20px; 
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    border-radius: 30px;
+    height: auto;
+    padding: 0 !important;
+  }
+
+  .email-input {
+    width: 100%;
+    padding: 20px;
+    border-radius: 30px 30px 0 0;
+  }
+
+  .submit-button {
+    width: 100%;
+    border-radius: 0 0 30px 30px;
+  }
+
+  .content {
+    flex-direction: column !important;
+  }
+}
+
+
+.gallery-3{
+  grid-template-columns: repeat(3, 1fr) !important;
+}

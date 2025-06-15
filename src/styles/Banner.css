@@ -1,0 +1,140 @@
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full-screen background */
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Behind other content */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1; /* Overlay above the video but below the banner content */
+}
+
+.banner {
+  position: relative; /* Ensure the banner is positioned relative to the video container */
+  z-index: 2; /* Banner content above the overlay */
+  text-align: center;
+  padding: 10rem 4rem;
+  color: #fff;
+}
+.banner h1,
+.banner h2 {
+  color: white;
+}
+
+.banner-button {
+  background-color: #dd1d1d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  z-index: 3; /* Button above the banner content */
+}
+
+  .banner-button {
+    background-color: #dd1d1d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .middlebanner{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 2rem;
+    margin: 4rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Initial shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  .middle-banner-item{
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    gap: 1rem;
+    padding-left: 3rem;
+    border-left: 1px black solid; 
+  }
+
+  .border-none{
+    border: none;
+  }
+
+  .middle-banner-item-img{
+    align-items: center;
+    justify-content: center;
+    display: flex
+  }
+  
+  .middle-banner-item-img img{
+    width: 2rem;
+  }
+  
+  .middle-banner-item-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    .middlebanner{
+      flex-direction: column !important;
+      gap: 2rem !important;
+    }
+
+    .middle-banner-item{
+      border: none;
+    }
+  }
+
+  @media (min-width: 200px) and (max-width: 768px) {
+    .middlebanner {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      padding-top: 4rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Initial shadow */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .video-container {
+      position: relative;
+      height: 100vh; /* Full-screen background */
+      overflow: hidden;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .middlebanner {
+      display: flex;
+      justify-content: space-between;
+      flex-direction:row;
+      /* padding-top: 4rem; */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Initial shadow */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .video-container {
+      position: relative;
+      height: 100vh; /* Full-screen background */
+      overflow: hidden;
+    }
+  }

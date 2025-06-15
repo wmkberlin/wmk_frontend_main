@@ -1,0 +1,336 @@
+/* Sliding Bar */
+.sliding-bar {
+    background-color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+
+.sliding-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: slide 20s linear infinite;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Important Notice */
+/* .important-notice {
+    background-color: #ea2425    ;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+} */
+
+/* Main Content */
+#TBDP_content{
+    height: auto;
+}
+.content {
+    display: flex;
+    gap: 20px;
+    height: auto;
+    padding: 0;
+    max-width: 100%;
+    min-height: 800px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+/* Image Container */
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+/* Ensure the image fills the entire container */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text Container (Scrollable if Content Overflows) */
+.text-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* padding: 20px; */
+    height: 100%;
+    min-height: 800px; 
+    overflow-y: auto; 
+    padding: 4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: unset;
+  scrollbar-width: none;
+}
+
+/* Gallery Section */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    min-height: 400px;
+    position: relative;
+}
+
+.gallery1{
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
+/* Gallery Image */
+.gallery img {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    aspect-ratio: 2940 / 2370;
+    object-fit: cover;
+    position: relative;
+}
+
+/* Name Overlay on Images */
+.gallery-item {
+    position: relative;
+}
+
+.gallery-item .image-name {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Full-Width Image Section */
+.full-width-image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 0px;
+}
+
+.full-width-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 380px;
+    filter: brightness(50%);
+}
+
+/* Full-Width Text Overlay */
+.full-width-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 10px 20px;
+}
+
+/* Full-Width Text Heading */
+.full-width-text h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.full-width-text p {
+    font-size: 2.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Info Section */
+.info-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+/* Info Cards */
+.info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.info-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-card p {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #333;
+    max-width: 280px;
+    flex-grow: 1;
+}
+
+/* 'MORE ON THIS' Button */
+.more-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0.875rem 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 50px;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Arrow Styling */
+.more-button::after {
+    content: "→";
+    font-size: 1.2rem;
+    font-weight: 900;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    position: absolute;
+    right: 15px;
+}
+
+/* Hover Effect */
+.more-button:hover {
+    background-color: #222;
+    transform: scale(1.1);
+}
+
+/* Arrow Appears on Hover */
+.more-button:hover::after {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .info-section {
+        gap: 3rem;
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-section {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        /* width: 140%; */
+    }
+
+    .info-card p {
+        max-width: 100%;
+    }
+
+    .image-container{
+        position: relative;
+      }
+}
+
+/* Newsletter Section */
+/* .newsletter-container {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    font-family: 'Arial', sans-serif;
+} */
+
+/* Newsletter Heading */
+.newsletter-container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Form Container */
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid white;
+    border-radius: 50px;
+    overflow: hidden;
+    /* height: 60px; */
+    height: 100px;
+}
+
+/* Input Field */
+.email-input {
+    flex: 1;
+    padding: 18px 20px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background: black;
+    color: white;
+}
+
+/* Submit Button */
+.submit-button {
+    background-color: white;
+    color: black;
+    padding: 18px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+    background-color: #ddd;
+}
+
+
+
+/*only names on pic left
+done*/

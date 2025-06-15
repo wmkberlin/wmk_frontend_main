@@ -1,0 +1,134 @@
+.footer {
+  background-color: #f9f9f9;
+  padding: 20px 40px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Top Section Layout */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+/* Bottom Section Layout */
+.footer-bottom {
+  font-size: 12px;
+  color: #999;
+  text-align: right;
+}
+
+.footer-bottom p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-bottom p a {
+  margin-left: 6px;
+}
+/* Each Column */
+.footer-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+/* Headings */
+.footer-section h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Paragraph */
+.footer-section p {
+  font-size: 14px;
+  color: #555;
+  margin: 0; /* Remove default bottom margin if desired */
+}
+
+/* Footer Links */
+.footer-links,
+.social-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Link Items */
+.footer-links li,
+.social-links li {
+  margin-bottom: 8px;
+}
+
+/* Link Styling */
+.footer-links a,
+.social-links a {
+  text-decoration: none;
+  color: #000;           /* Black links */
+  display: inline-flex;  /* Inline-flex to align icon & text */
+  align-items: center;   /* Center vertically */
+}
+
+/* Hover Effect */
+.footer-links a:hover,
+.social-links a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Icon Style (Optional) */
+.social-icon {
+  margin-right: 8px; /* Space between icon & text */
+}
+
+/* Remove last margin on the final column */
+.footer-section:last-child {
+  margin-right: 0;
+}
+
+/* ========== MOBILE RESPONSIVENESS (≤768px) ========== */
+@media (max-width: 768px) {
+  /* Stack the .footer-top sections vertically */
+  .footer-top {
+    display: block; /* Instead of flex */
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+
+  /* Each .footer-section becomes full-width and stacks in the order they appear in the DOM */
+  .footer-section {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  /* Remove last section's bottom margin for a cleaner look */
+  .footer-section:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Optional: make headings & text bigger & bolder on mobile */
+  .footer-section h3 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .footer-section p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #444;
+  }
+
+  /* Adjust footer padding for smaller screens if desired */
+  .footer {
+    padding: 20px;
+  }
+
+  /* Align bottom section text left or center if you prefer */
+  .footer-bottom {
+    text-align: center;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,158 @@
+/* Container for the filler items */
+.fillers-container {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  gap: 0px; 
+  margin-top: 0rem;
+}
+
+@media (min-width: 200px) and (max-width: 768px) {
+.fillers-container {
+  display: flex; 
+  justify-content: space-between; 
+  flex-direction: column;
+  align-items: center; 
+  gap: 5px; 
+  margin-top: 2rem;
+}
+.filler-item {
+  flex: none !important;
+}
+}
+
+/* Common styles for both filler items */
+.filler-item {
+  flex: 1; 
+  height: 25rem; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white; 
+  text-align: center;
+  padding: 20px; 
+  background-size: cover; 
+  background-position: center; 
+  position: relative; 
+  overflow: hidden; 
+}
+
+/* Dark overlay for the background image (applies to all filler items by default) */
+.filler-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
+}
+
+/* Content inside the filler item */
+.filler-item span,
+.filler-item button {
+  position: relative;
+  z-index: 2; 
+}
+
+/* 1st filler item background */
+.filler-item-1 {
+  background-image: url('/rentalImage.webp'); 
+}
+
+@media (max-width: 768px) {
+  .filler-item-01, .filler-item-02, .filler-item-1, .filler-item-2, .filler-item-11, .filler-item-22{
+    min-height: 30rem;
+  }
+}
+
+/* Additional backgrounds (not used in this component) */
+.filler-item-11 {
+  background-image: url('//wmk.berlin/cdn/shop/files/2014-04-23_18.33.11_-_Kopie.jpg?v=1700090300&width=640');
+}
+.filler-item-22 {
+  background-image: url('/our-team main div pic.webp');
+}
+
+/* 2nd filler item background */
+.filler-item-2 {
+  background-image: url('/Aus _Friedrichshain _in _die _ganze.webp'); 
+}
+
+/* 
+Remove the dark overlay specifically for filler-item-2 
+by overriding background-color to fully transparent 
+*/
+.filler-item-2::before,
+.filler-item-22::before {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+/* 'MORE ON THIS' Button */
+.more-button {
+background-color: #000;
+color: #fff;
+border: none;
+padding: 0.875rem 2rem;
+font-size: 0.9rem;
+letter-spacing: 1px;
+cursor: pointer;
+transition: all 0.3s ease-in-out;
+font-weight: 700;
+text-transform: uppercase;
+border-radius: 50px;
+min-width: 200px;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+overflow: hidden;
+}
+
+/* Arrow Styling */
+.more-button::after {
+content: "→";
+font-size: 1.2rem;
+font-weight: 900;
+opacity: 0;
+transform: translateX(-10px);
+transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+position: absolute;
+right: 15px;
+}
+
+/* Hover Effect */
+.more-button:hover {
+background-color: #222;
+transform: scale(1.1);
+}
+
+/* Arrow Appears on Hover */
+.more-button:hover::after {
+opacity: 1;
+transform: translateX(5px);
+}
+
+/* Span text styles */
+.span1-filler {
+  font-family: "Audiowide", serif;
+font-weight: 700;
+font-size: 1.5rem;
+text-align: center;
+}
+
+.span2-filler {
+font-size: 2rem;
+text-transform: capitalize;
+text-align: center;
+}
+
+/* Transparent button variant */
+.btnfillers {
+background-color: transparent !important;
+transition: all 0.3s ease; 
+border: 2px solid white !important; 
+margin-top: 16px;
+}

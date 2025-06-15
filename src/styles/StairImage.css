@@ -1,0 +1,47 @@
+
+.full-width-image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+}
+
+.full-width-image img {
+    width: 135%;
+    height: 338px;
+    object-fit: cover;
+    display: block; /* Prevents extra space below inline images */
+}
+
+.full-width-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-family: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.full-width-text h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.full-width-text p {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure no spacing below */
+.full-width-image::after {
+    content: "";
+    display: block;
+    height: 0;
+}
