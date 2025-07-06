@@ -127,11 +127,7 @@ const CartCheckout = () => {
   );
 
   // Calculate discount and new total
-  const discount = coupon
-    ? coupon.type === "percent"
-      ? (calculatedTotalFinal * coupon.value) / 100
-      : coupon.value
-    : 0;
+  const discount = coupon ? coupon.discountAmount : 0;
   const totalAfterDiscount = Math.max(0, calculatedTotalFinal - discount);
 
   // Determine the store address based on shopType
@@ -248,8 +244,15 @@ const CartCheckout = () => {
   };
 
   const handleApplyCoupon = (couponObj, code) => {
-    setCoupon(couponObj);
-    setCouponCode(code);
+    if (couponObj) {
+      // Valid coupon applied
+      setCoupon(couponObj);
+      setCouponCode(code);
+    } else {
+      // Invalid coupon or error
+      setCoupon(null);
+      setCouponCode('');
+    }
     setLanguage(getCurrentLanguage());
   };
 
@@ -475,7 +478,10 @@ const CartCheckout = () => {
         )}
 
         {/* Coupon input directly under cart items */}
-        <CouponCode onApply={handleApplyCoupon} />
+        <CouponCode 
+          orderAmount={calculatedTotalFinal}
+          onApply={handleApplyCoupon} 
+        />
 
         <div className="cart-total">
           <p>

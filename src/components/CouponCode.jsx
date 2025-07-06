@@ -1,25 +1,51 @@
 import React, { useState } from 'react';
 
-const DUMMY_COUPONS = {
-  'SAVE10': { type: 'percent', value: 10 }, // 10% off
-  'FLAT50': { type: 'fixed', value: 50 },  // 50€ off
-};
-
-const CouponCode = ({ onApply }) => {
+const CouponCode = ({ orderAmount, productCategory, onApply }) => {
   const [code, setCode] = useState('');
   const [status, setStatus] = useState('');
-
+  const [message, setMessage] = useState('');
   const handleApply = async () => {
     setStatus('');
-    // Simulate API call delay
-    await new Promise(res => setTimeout(res, 700));
-    const coupon = DUMMY_COUPONS[code.trim().toUpperCase()];
-    if (coupon) {
-      setStatus('success');
-      onApply(coupon, code.trim().toUpperCase());
-    } else {
+    setMessage('');
+    if (!code.trim()) {
       setStatus('invalid');
-      onApply(null, code.trim().toUpperCase());
+      setMessage('Bitte geben Sie einen Gutscheincode ein.');
+      return;
+    }
+    if (orderAmount == null || isNaN(orderAmount) || Number(orderAmount) <= 0) {
+      setStatus('invalid');
+      setMessage('Bitte geben Sie einen gültigen Bestellwert ein.');
+      return;
+    }
+    try {
+      const response = await fetch('http://localhost:8000/api/discount-coupons/apply', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify({
+          discountCode: code.trim(),
+          orderAmount,
+          productCategory,
+        }),
+      });
+
+      const data = await response.json();
+      console.log(data);
+      if (response.ok) {
+        setStatus('success');
+        setMessage(data.message || 'Gutschein angewendet!');
+        onApply && onApply(data.appliedCoupon, code.trim());
+      } else {
+        setStatus('invalid');
+        setMessage(data.message || 'Ungültiger Gutscheincode.');
+        onApply && onApply(null, code.trim());
+      }
+    } catch (error) {
+      setStatus('invalid');
+      setMessage('Fehler beim Anwenden des Gutscheins.');
+      onApply && onApply(null, code.trim());
     }
   };
 
@@ -38,8 +64,11 @@ const CouponCode = ({ onApply }) => {
           Anwenden
         </button>
       </div>
-      {status === 'success' && <div style={{ color: 'green' }}>Gutschein angewendet!</div>}
-      {status === 'invalid' && <div style={{ color: 'red' }}>Ungültiger Gutscheincode.</div>}
+      {message && (
+        <div style={{ color: status === 'success' ? 'green' : 'red' }}>
+          {message}
+        </div>
+      )}
     </div>
   );
 };

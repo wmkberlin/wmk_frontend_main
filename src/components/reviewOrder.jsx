@@ -53,6 +53,7 @@ const OrderReview = () => {
     setLoading(true);
 
     try {
+      console.log(totalPriceWithoutTax)
       const response = await axios.post(
         "https://wmk-backend.onrender.com/api/payments/initiate-payment",
         {
